@@ -1,4 +1,4 @@
-name: BDMS Release Workflow
+name: bdms Release Workflow
 
 on:
   workflow_dispatch:
