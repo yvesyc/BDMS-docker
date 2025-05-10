@@ -1,9 +1,9 @@
 version: '3.4'
 services:
-  beidou-server:
+  BDMS-server:
     container_name: BDMS-server
     # nightly 为每日构建
-    image: ghcr.io/yvesyc/beidou-server:nightly
+    image: ghcr.io/yvesyc/BDMS-server:nightly
     # 自己构建..
     # build:
     #   context: .
@@ -20,9 +20,9 @@ services:
     # 如果要挂载wz scripts 取消注释 volumes 设置
     # 注意 命令行参数的优先级高于 application.yml 配置文件
     volumes:
-      - ./beidou-server-nightly:/opt/server
+      - ./BDMS-server-nightly:/opt/server
     command:
-      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://beidou-db:3306/beidou?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://BDMS-db:3306/BDMS?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       - --mybatis-flex.datasource.mysql.username=root
       - --mybatis-flex.datasource.mysql.password=root
       - --gms.service.wan-host=127.0.0.1
@@ -40,15 +40,15 @@ services:
       timeout: 5s
       retries: 10
     depends_on:
-      beidou-db:
+      BDMS-db:
         condition: service_healthy
     networks:
-      - beidou-network
+      - BDMS-network
 
-  beidou-ui:
+  BDMS-ui:
     container_name: BDMS-ui
     # nightly 为每日构建
-    image: ghcr.io/beidoums/beidou-ui:nightly
+    image: ghcr.io/yvesyc/BDMS-ui:nightly
     # 自己构建..
     # build:
     #   context: .
@@ -60,11 +60,11 @@ services:
       # Web
       - "8686:8686"
     depends_on:
-      - beidou-server
+      - BDMS-server
     networks:
-      - beidou-network
+      - BDMS-network
       
-  beidou-db:
+  BDMS-db:
     container_name: BDMS-db
     image: mysql:8.4.0
     environment:
@@ -81,8 +81,8 @@ services:
       retries: 10
       start_period: 10s
     networks:
-      - beidou-network
+      - BDMS-network
 
 networks:
-  beidou-network:
+  BDMS-network:
     driver: bridge
