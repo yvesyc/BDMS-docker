@@ -36,7 +36,7 @@
 # yvesyc/bdms-server-all:<版本号>
 
 # ghcr.io 源
-# ghcr.io/beidoums/bdms-server-all:<版本号>
+# ghcr.io/yvesyc/bdms-server-all:<版本号>
 
 git clone https://github.com/yvesyc/bdms-docker && cd bdms-docker
 # 一键创建容器并启动
