@@ -1,9 +1,9 @@
 version: '3.4'
 services:
   beidou-server:
-    container_name: beidou-server
+    container_name: BDMS-server
     # nightly 为每日构建
-    image: ghcr.io/beidoums/beidou-server:nightly
+    image: ghcr.io/yvesyc/beidou-server:nightly
     # 自己构建..
     # build:
     #   context: .
@@ -46,7 +46,7 @@ services:
       - beidou-network
 
   beidou-ui:
-    container_name: beidou-ui
+    container_name: BDMS-ui
     # nightly 为每日构建
     image: ghcr.io/beidoums/beidou-ui:nightly
     # 自己构建..
@@ -65,7 +65,7 @@ services:
       - beidou-network
       
   beidou-db:
-    container_name: beidou-db
+    container_name: BDMS-db
     image: mysql:8.4.0
     environment:
       # mysql root 默认密码
