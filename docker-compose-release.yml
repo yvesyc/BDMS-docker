@@ -13,7 +13,7 @@ services:
       # Channels.
       - "7575-7577:7575-7577"
     volumes:
-      - ./bdms-release:/opt/server
+      - ./bdms-server-release:/opt/server
     command: 
       - --mybatis-flex.datasource.mysql.url=jdbc:mysql://bdms-db:3306/beidou?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       - --mybatis-flex.datasource.mysql.username=root
