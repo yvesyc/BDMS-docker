@@ -1,8 +1,8 @@
 
 <h2 align="center">
-  <img height="160" width="240" src="https://github.com/BeiDouMS/BeiDou-Server/blob/master/gms-ui/src/assets/logo.png?raw=true" alt="BeiDouMS / BeiDou-Server">
+  <img height="160" width="240" src="https://github.com/yvesyc/bdms-Server/blob/master/gms-ui/src/assets/logo.png?raw=true" alt="yvesyc / bdms-Server">
   <br>
-  BeiDou Docker
+  bdms Docker
   <br>
   <br>
 
@@ -11,14 +11,14 @@
 [![Docker Image Version](https://img.shields.io/docker/v/sleepnap/beidou-server?style=for-the-badge&label=beidou-server)](https://hub.docker.com/r/sleepnap/beidou-server)
 [![Docker Image Version](https://img.shields.io/docker/v/sleepnap/beidou-ui?style=for-the-badge&label=beidou-ui)](https://hub.docker.com/r/sleepnap/beidou-ui)
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/BeiDouMS/BeiDou-docker/release.yaml?style=for-the-badge&label=release%20build)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/BeiDouMS/BeiDou-docker/nightly.yaml?style=for-the-badge&label=nightly%20build)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/release.yaml?style=for-the-badge&label=release%20build)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/nightly.yaml?style=for-the-badge&label=nightly%20build)
 
 </h2>
 
 <br>
 
-# 通过Docker部署BeiDouMS
+# 通过Docker部署yvesyc
 
 [视频教程](https://www.bilibili.com/video/BV12j6WYDEuQ/)
 
@@ -38,7 +38,7 @@
 # ghcr.io 源
 # ghcr.io/beidoums/beidou-server-all:<版本号>
 
-git clone https://github.com/BeiDouMS/BeiDou-docker && cd BeiDou-docker
+git clone https://github.com/yvesyc/bdms-docker && cd bdms-docker
 # 一键创建容器并启动
 sudo docker compose -f docker-compose-release.yml up -d
 # 关闭服务
@@ -77,7 +77,7 @@ sudo docker compose -f docker-compose-release.yml logs --tail 500
 # ghcr.io/beidoums/beidou-ui:nightly
 # ghcr.io/beidoums/beidou-server:nightly
 
-git clone https://github.com/BeiDouMS/BeiDou-docker && cd BeiDou-docker
+git clone https://github.com/yvesyc/bdms-docker && cd bdms-docker
 
 # 先修改 docker-compose-nightly.yml 中的 ip 设置 ...
 # 若要访问管理页面， 还需设置app.vue
