@@ -37,7 +37,7 @@ RUN mvn dependency:resolve
 
 RUN mvn clean package -U
 
-RUN mkdir result && mv ./gms-server/target/BeiDou.jar ./result/BeiDou.jar
+RUN mkdir result && mv ./gms-server/target/bdms.jar ./result/bdms.jar
 
 COPY --from=codestage /opt/repository/bdms-Server/gms-server/src/main/resources/application.yml ./result/application.yml
 COPY --from=codestage /opt/repository/bdms-Server/gms-server/wz ./result/wz
