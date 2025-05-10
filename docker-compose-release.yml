@@ -1,8 +1,8 @@
 version: '3.4'
 services:
-  BDMS-server-all:
-    container_name: BDMS-server-all
-    image: ghcr.io/yvesyc/BDMS-server-all:v1.8.1
+  bdms-server-all:
+    container_name: bdms-server-all
+    image: ghcr.io/yvesyc/bdms-server-all:v1.8.1
     environment:
       TZ: Asia/Shanghai
     ports:
@@ -13,9 +13,9 @@ services:
       # Channels.
       - "7575-7577:7575-7577"
     volumes:
-      - ./BDMS-release:/opt/server
+      - ./bdms-release:/opt/server
     command: 
-      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://BDMS-db:3306/BDMS?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://bdms-db:3306/bdms?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       - --mybatis-flex.datasource.mysql.username=root
       - --mybatis-flex.datasource.mysql.password=root
       - --gms.service.wan-host=127.0.0.1
@@ -27,13 +27,13 @@ services:
     #   timeout: 5s
     #   retries: 10
     depends_on:
-      BDMS-db:
+      bdms-db:
         condition: service_healthy
     networks:
-      - BDMS-network
+      - bdms-network
 
-  BDMS-db:
-    container_name: BDMS-db
+  bdms-db:
+    container_name: bdms-db
     image: mysql:8.4.0
     environment:
       # mysql root 默认密码
@@ -49,8 +49,8 @@ services:
       retries: 10
       start_period: 10s
     networks:
-      - BDMS-network
+      - bdms-network
 
 networks:
-  BDMS-network:
+  bdms-network:
     driver: bridge
