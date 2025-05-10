@@ -15,7 +15,7 @@ services:
     volumes:
       - ./bdms-release:/opt/server
     command: 
-      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://bdms-db:3306/bdms?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+      - --mybatis-flex.datasource.mysql.url=jdbc:mysql://bdms-db:3306/beidou?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       - --mybatis-flex.datasource.mysql.username=root
       - --mybatis-flex.datasource.mysql.password=root
       - --gms.service.wan-host=127.0.0.1
