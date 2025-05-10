@@ -1,4 +1,4 @@
-name: BDMS Nightly Workflow
+name: bdms Nightly Workflow
 
 on:
   workflow_dispatch:
@@ -8,8 +8,8 @@ on:
 
 env:
   GHCR_REGISTRY: ghcr.io
-  BACKEND_IMAGE: BDMS-server
-  FRONTEND_IMAGE: BDMS-ui
+  BACKEND_IMAGE: bdms-server
+  FRONTEND_IMAGE: bdms-ui
 
 concurrency: 
   group: ${{github.workflow}} - ${{github.ref}}
