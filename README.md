@@ -9,7 +9,7 @@
 
 [![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-server-all?style=for-the-badge&label=bdms-server-all)](https://hub.docker.com/r/yvesyc/bdms-server-all)
 [![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-server?style=for-the-badge&label=bdms-server)](https://hub.docker.com/r/yvesyc/bdms-server)
-[![Docker Image Version](https://img.shields.io/docker/v/yvesyc/beidou-ui?style=for-the-badge&label=beidou-ui)](https://hub.docker.com/r/yvesyc/beidou-ui)
+[![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-ui?style=for-the-badge&label=bdms-ui)](https://hub.docker.com/r/yvesyc/bdms-ui)
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/release.yaml?style=for-the-badge&label=release%20build)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/nightly.yaml?style=for-the-badge&label=nightly%20build)
