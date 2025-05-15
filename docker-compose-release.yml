@@ -1,8 +1,8 @@
 version: '3.4'
 services:
   beidou-server-all:
-    container_name: beidou-server-all
-    image: ghcr.io/beidoums/beidou-server-all:v1.8
+    container_name: bdms-server-all
+    image: ghcr.io/yvesyc/bdms-server-all:v1.8
     environment:
       TZ: Asia/Shanghai
     ports:
@@ -13,7 +13,7 @@ services:
       # Channels.
       - "7575-7577:7575-7577"
     volumes:
-      - ./beidou-server-release:/opt/server
+      - ./bdms-server-release:/opt/server
     command: 
       - --mybatis-flex.datasource.mysql.url=jdbc:mysql://beidou-db:3306/beidou?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
       - --mybatis-flex.datasource.mysql.username=root
@@ -27,13 +27,13 @@ services:
     #   timeout: 5s
     #   retries: 10
     depends_on:
-      beidou-db:
+      bdms-db:
         condition: service_healthy
     networks:
-      - beidou-network
+      - bdms-network
 
-  beidou-db:
-    container_name: beidou-db
+  bdms-db:
+    container_name: bdms-db
     image: mysql:8.4.0
     environment:
       # mysql root 默认密码
@@ -49,8 +49,8 @@ services:
       retries: 10
       start_period: 10s
     networks:
-      - beidou-network
+      - bdms-network
 
 networks:
-  beidou-network:
+  bdms-network:
     driver: bridge

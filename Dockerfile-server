@@ -12,7 +12,7 @@ WORKDIR /opt/repository
 
 ARG CACHEBUST=1
 
-RUN git clone https://github.com/BeiDouMS/BeiDou-Server --depth 1
+RUN git clone https://github.com/yvesyc/bdms-Server --depth 1
 
 FROM maven:3.9.6-amazoncorretto-21 AS builder
 
@@ -28,9 +28,9 @@ FROM maven:3.9.6-amazoncorretto-21 AS builder
 WORKDIR /opt/build
 
 # Any changes to the pom will affect the entire build, so it should be copied first.
-COPY --from=codestage /opt/repository/BeiDou-Server/pom.xml ./pom.xml
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/src ./gms-server/src
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/pom.xml ./gms-server/pom.xml
+COPY --from=codestage /opt/repository/bdms-Server/pom.xml ./pom.xml
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/src ./gms-server/src
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/pom.xml ./gms-server/pom.xml
 
 # for caching
 RUN mvn dependency:resolve
@@ -39,11 +39,11 @@ RUN mvn clean package -U
 
 RUN mkdir result && mv ./gms-server/target/bdms.jar ./result/bdms.jar
 
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/src/main/resources/application.yml ./result/application.yml
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/wz ./result/wz
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/wz-zh-CN ./result/wz-zh-CN
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/scripts ./result/scripts
-COPY --from=codestage /opt/repository/BeiDou-Server/gms-server/scripts-zh-CN ./result/scripts-zh-CN
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/src/main/resources/application.yml ./result/application.yml
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/wz ./result/wz
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/wz-zh-CN ./result/wz-zh-CN
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/scripts ./result/scripts
+COPY --from=codestage /opt/repository/bdms-Server/gms-server/scripts-zh-CN ./result/scripts-zh-CN
 
 FROM eclipse-temurin:21-jre-alpine
 
