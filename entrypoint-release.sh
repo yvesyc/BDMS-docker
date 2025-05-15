@@ -13,4 +13,8 @@ fi
 
 rm -rf $working_dir_bak
 
+<<<<<<< HEAD
 cd $working_dir && ./jdk-21.0.2/bin/java -jar ./BeiDou.jar --spring.config.location=./application.yml $@
+=======
+cd $working_dir && ./jdk-21.0.2/bin/java -jar ./bdms.jar --spring.config.location=./application.yml $@
+>>>>>>> 4e65c5970a105ae545d6d37dd087487b1c8fb20f

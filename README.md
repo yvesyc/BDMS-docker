@@ -36,7 +36,11 @@
 # sleepnap/beidou-server-all:<版本号>
 
 # ghcr.io 源
+<<<<<<< HEAD
 # ghcr.io/beidoums/beidou-server-all:<版本号>
+=======
+# ghcr.io/yvesyc/bdms-server-all:<版本号>
+>>>>>>> 4e65c5970a105ae545d6d37dd087487b1c8fb20f
 
 git clone https://github.com/BeiDouMS/BeiDou-docker && cd BeiDou-docker
 # 一键创建容器并启动
