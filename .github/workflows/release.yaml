@@ -1,4 +1,4 @@
-name: bdms Release Workflow
+name: BeiDou Release Workflow
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
     
 env:
   GHCR_REGISTRY: ghcr.io
-  RELEASE_IMAGE: bdms-server-all
+  RELEASE_IMAGE: beidou-server-all
 
 jobs:
   Backend:

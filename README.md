@@ -1,24 +1,24 @@
 
 <h2 align="center">
-  <img height="160" width="240" src="https://github.com/yvesyc/bdms-Server/blob/master/gms-ui/src/assets/logo.png?raw=true" alt="yvesyc / bdms-Server">
+  <img height="160" width="240" src="https://github.com/BeiDouMS/BeiDou-Server/blob/master/gms-ui/src/assets/logo.png?raw=true" alt="BeiDouMS / BeiDou-Server">
   <br>
-  bdms Docker
+  BeiDou Docker
   <br>
   <br>
 
 
-[![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-server-all?style=for-the-badge&label=bdms-server-all)](https://hub.docker.com/r/yvesyc/bdms-server-all)
-[![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-server?style=for-the-badge&label=bdms-server)](https://hub.docker.com/r/yvesyc/bdms-server)
-[![Docker Image Version](https://img.shields.io/docker/v/yvesyc/bdms-ui?style=for-the-badge&label=bdms-ui)](https://hub.docker.com/r/yvesyc/bdms-ui)
+[![Docker Image Version](https://img.shields.io/docker/v/sleepnap/beidou-server-all?style=for-the-badge&label=beidou-server-all)](https://hub.docker.com/r/sleepnap/beidou-server-all)
+[![Docker Image Version](https://img.shields.io/docker/v/sleepnap/beidou-server?style=for-the-badge&label=beidou-server)](https://hub.docker.com/r/sleepnap/beidou-server)
+[![Docker Image Version](https://img.shields.io/docker/v/sleepnap/beidou-ui?style=for-the-badge&label=beidou-ui)](https://hub.docker.com/r/sleepnap/beidou-ui)
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/release.yaml?style=for-the-badge&label=release%20build)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/yvesyc/bdms-docker/nightly.yaml?style=for-the-badge&label=nightly%20build)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/BeiDouMS/BeiDou-docker/release.yaml?style=for-the-badge&label=release%20build)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/BeiDouMS/BeiDou-docker/nightly.yaml?style=for-the-badge&label=nightly%20build)
 
 </h2>
 
 <br>
 
-# 通过Docker部署yvesyc
+# 通过Docker部署BeiDouMS
 
 [视频教程](https://www.bilibili.com/video/BV12j6WYDEuQ/)
 
@@ -33,12 +33,12 @@
 # 使用稳定的构建（github release） 
 
 # docker.io 源
-# yvesyc/bdms-server-all:<版本号>
+# sleepnap/beidou-server-all:<版本号>
 
 # ghcr.io 源
-# ghcr.io/beidoums/bdms-server-all:<版本号>
+# ghcr.io/beidoums/beidou-server-all:<版本号>
 
-git clone https://github.com/yvesyc/bdms-docker && cd bdms-docker
+git clone https://github.com/BeiDouMS/BeiDou-docker && cd BeiDou-docker
 # 一键创建容器并启动
 sudo docker compose -f docker-compose-release.yml up -d
 # 关闭服务
@@ -52,15 +52,15 @@ sudo docker compose -f docker-compose-release.yml logs --tail 500
 
 
 # 服务器配置文件位置
-# bdms-server-nightly/application.yml
+# beidou-server-nightly/application.yml
 
 # 脚本位置
-# bdms-server-nightly/scripts
-# bdms-server-nightly/scripts-zh-CN
+# beidou-server-nightly/scripts
+# beidou-server-nightly/scripts-zh-CN
 
 # wz位置
-# bdms-server-nightly/wz
-# bdms-server-nightly/wz-zh-CN
+# beidou-server-nightly/wz
+# beidou-server-nightly/wz-zh-CN
 ```
 
 
@@ -70,14 +70,14 @@ sudo docker compose -f docker-compose-release.yml logs --tail 500
 # 要使用最新的构建 (每日定时构建)  
 
 # docker.io 源
-# yvesyc/beidou-ui:nightly
-# yvesyc/bdms-server:nightly
+# sleepnap/beidou-ui:nightly
+# sleepnap/beidou-server:nightly
 
 # ghcr.io 源
 # ghcr.io/beidoums/beidou-ui:nightly
-# ghcr.io/beidoums/bdms-server:nightly
+# ghcr.io/beidoums/beidou-server:nightly
 
-git clone https://github.com/yvesyc/bdms-docker && cd bdms-docker
+git clone https://github.com/BeiDouMS/BeiDou-docker && cd BeiDou-docker
 
 # 先修改 docker-compose-nightly.yml 中的 ip 设置 ...
 # 若要访问管理页面， 还需设置app.vue
@@ -90,15 +90,15 @@ sudo docker compose -f docker-compose-nightly.yml restart
 sudo docker compose -f docker-compose-nightly.yml logs --tail 500
 
 # 服务器配置文件位置
-# bdms-server-nightly/application.yml
+# beidou-server-nightly/application.yml
 
 # 脚本位置
-# bdms-server-nightly/scripts
-# bdms-server-nightly/scripts-zh-CN
+# beidou-server-nightly/scripts
+# beidou-server-nightly/scripts-zh-CN
 
 # wz位置
-# bdms-server-nightly/wz
-# bdms-server-nightly/wz-zh-CN
+# beidou-server-nightly/wz
+# beidou-server-nightly/wz-zh-CN
 ```
 
 
@@ -106,6 +106,6 @@ sudo docker compose -f docker-compose-nightly.yml logs --tail 500
 
 ### 镜像名解释
 
-`bdms-server-all:<version>` 为带有版本号的稳定版
+`beidou-server-all:<version>` 为带有版本号的稳定版
 
-`bdms-server:nightly` , `beidou-ui:nightly` 是每日五点基于最新代码构建的尝鲜版，前后端分开打包，需要一起安装，推荐使用 `docker-compose`
+`beidou-server:nightly` , `beidou-ui:nightly` 是每日五点基于最新代码构建的尝鲜版，前后端分开打包，需要一起安装，推荐使用 `docker-compose`
