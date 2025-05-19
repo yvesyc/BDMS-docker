@@ -2,7 +2,7 @@ version: '3.4'
 services:
   beidou-server-all:
     container_name: bdms-server-all
-    image: ghcr.io/yvesyc/bdms-server-all:v1.8
+    image: ghcr.io/yvesyc/bdms-server-all:v1.8.1
     environment:
       TZ: Asia/Shanghai
     ports:
