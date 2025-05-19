@@ -6,9 +6,9 @@ RUN apt-get update && \
     apt-get install -y curl jq && \
     apt-get clean
 
-ARG GITHUB_OWNER=yvesyc
-ARG GITHUB_REPO=bdms-Server
-# ARG ASSET_NAME_PREFIX=bdms-Server
+ARG GITHUB_OWNER=BeiDouMS
+ARG GITHUB_REPO=BeiDou-Server
+# ARG ASSET_NAME_PREFIX=BeiDou-Server
 # ARG ASSET_NAME_EXT=tar.gz
 ARG RELEASE_PREFIX_GIT_TAG=Release
 ARG RELEASE_VERSION
